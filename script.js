@@ -2,10 +2,10 @@
 
 // 1. Car information
 const cars = [
-    { name: "Toyota Corolla", price: 80, image: "images/Toyota-Corolla.jpg" },
-    { name: "Honda Civic", price: 90, image: "images/Honda-Civic.jpg" },
-    { name: "Toyota RAV4", price: 110, image: "images/Toyota-RAV4.jpg" },
-    { name: "BMW 3 Series", price: 130, image: "images/BMW-3-Series.jpg" }
+    { name: "Toyota Corolla", price: 80, image: "Toyota-Corolla.jpg" },
+    { name: "Honda Civic", price: 90, image: "Honda-Civic.jpg" },
+    { name: "Toyota RAV4", price: 110, image: "Toyota-RAV4.jpg" },
+    { name: "BMW 3 Series", price: 130, image: "BMW-3-Series.jpg" }
 ];
 
 const MINOR_DAMAGE_FEE = 100;
