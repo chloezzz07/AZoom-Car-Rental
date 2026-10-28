@@ -98,7 +98,7 @@ function setupCustomerPage() {
         card.className = "car-card";
 
         const image = document.createElement("img");
-        image.src = car.image;
+        image.src = "https://chloezzz07.github.io/AZoom-Car-Rental/" + car.image;
         image.alt = car.name;
         image.onerror = function() {
             this.style.display = "none";
