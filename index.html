@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZoom Car Rental</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>AZoom Car Rental</h1>
+        <p>Book your car, enjoy your journey.</p>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="index.html">Customer Page</a>
+            <a href="employee.html">Employee Page</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <section id="available-cars">
+            <h2>Available Cars</h2>
+            <div id="car-list" class="car-list"></div>
+        </section>
+
+        <section id="booking-section">
+            <h2>1. Book a Car</h2>
+
+            <form id="booking-form">
+                <label for="car">Choose a car:</label>
+                <select id="car" required>
+                    <option value="Toyota Corolla">Toyota Corolla</option>
+                    <option value="Honda Civic">Honda Civic</option>
+                    <option value="Toyota RAV4">Toyota RAV4</option>
+                    <option value="BMW 3 Series">BMW 3 Series</option>
+                </select>
+
+                <label for="rental-date">Rental Date:</label>
+                <input type="date" id="rental-date" required>
+
+                <label for="return-date">Return Date:</label>
+                <input type="date" id="return-date" required>
+
+                <h3>Credit Card Details</h3>
+
+                <label for="card-name">Name on Card:</label>
+                <input type="text" id="card-name"
+                       placeholder="Demo cardholder name" required>
+
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number"
+                       inputmode="numeric" maxlength="19"
+                       placeholder="12 to 19 demo digits" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="month" id="expiry-date" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv"
+                       inputmode="numeric" maxlength="4"
+                       placeholder="CVV ex:123" required>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+
+            <div id="booking-result" class="result" aria-live="polite">
+                No booking has been made yet.
+            </div>
+        </section>
+
+        <section id="pickup-section">
+            <h2>2. Pick Up Car</h2>
+            <p>Customers collect their booked car at the AZoom office.</p>
+            <button type="button" id="pickup-button" onclick="pickUpCar()" disabled>
+                Confirm Car Pickup
+            </button>
+            <p id="pickup-status" class="status">Waiting for booking.</p>
+        </section>
+
+        <section id="return-section">
+            <h2>3. Return Car</h2>
+
+            <label for="return-location">Designated Car Park:</label>
+            <select id="return-location">
+                <option value="Changi Airport Car Park">Changi Airport Car Park</option>
+                <option value="Jurong East Car Park">Jurong East Car Park</option>
+                <option value="Marina Bay Car Park">Marina Bay Car Park</option>
+            </select>
+
+            <button type="button" id="return-button"
+                    onclick="returnCar()" disabled>
+                Confirm Car Return
+            </button>
+            <p id="return-status" class="status">Waiting for car pickup.</p>
+        </section>
+
+
+        <section id="bill-section">
+            <h2>4. Final Bill and Payment</h2>
+            <div id="final-bill" class="result">
+                The final bill will appear after vehicle inspection.
+            </div>
+
+            <button type="button" id="payment-button"
+                    onclick="payFinalBill()" disabled>
+                Confirm Final Payment
+            </button>
+            <p id="payment-status" class="status">Waiting for final bill.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AZoom Car Rental. </p>
+</body>
+</html>

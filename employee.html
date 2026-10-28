@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZoom Car Rental | Employee</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>AZoom Employee Dashboard</h1>
+        <p>Manage bookings and inspect returned vehicles.</p>
+        <nav>
+            <a href="index.html">Customer Page</a>
+            <a href="employee.html">Employee Page</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Customer Booking Details</h2>
+            <div id="employee-booking" class="result">
+                No customer booking found.
+            </div>
+        </section>
+
+        <section>
+            <h2>Vehicle Status</h2>
+            <p id="employee-pickup-status" class="status">
+                Waiting for pickup.
+            </p>
+            <p id="employee-return-status" class="status">
+                Waiting for return.
+            </p>
+        </section>
+
+        <section>
+            <h2>Vehicle Inspection</h2>
+            <p>Inspect the returned car and select its condition.</p>
+
+            <form id="inspection-form">
+                <label for="damage-status">Vehicle Condition:</label>
+                <select id="damage-status" required>
+                    <option value="No Damage">No Damage ($0)</option>
+                    <option value="Minor Damage">
+                        Minor Damage ($100)
+                    </option>
+                    <option value="Severe Damage">
+                        Severe Damage ($200)
+                    </option>
+                </select>
+
+                <button id="inspection-button" type="submit" disabled>
+                    Confirm Inspection
+                </button>
+            </form>
+
+            <p id="inspection-result" class="status">
+                Waiting for car return.
+            </p>
+        </section>
+
+        <section>
+            <h2>Final Bill Summary</h2>
+            <div id="employee-final-bill" class="result">
+                The final bill will appear after inspection.
+            </div>
+            <p class="note">
+                Final payment is confirmed by the customer on the customer page.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AZoom Car Rental. Employee demonstration page.</p>
+    </footer>
+</body>
+</html>
