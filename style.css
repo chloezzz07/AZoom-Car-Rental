@@ -233,3 +233,51 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Smooth page animation */
+main {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button hover animation */
+button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card hover animation */
+.car-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    main {
+        animation: none;
+    }
+
+    button,
+    .car-card {
+        transition: none;
+    }
+}
