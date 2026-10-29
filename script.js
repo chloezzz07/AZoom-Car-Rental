@@ -291,6 +291,25 @@ function setupCustomerPage() {
         alert("Final payment confirmed for this rent.");
     });
 
+        // Start New Rental button
+        document.getElementById("reset-button").addEventListener("click", function() {
+            const confirmed = confirm(
+                "Are you sure you want to clear the current rental and start a new one?"
+            );
+
+            if (!confirmed) {
+                return;
+            }
+
+            localStorage.removeItem(STORAGE_KEY);
+
+            document.getElementById("booking-form").reset();
+
+            renderCustomerPage();
+
+            alert("Rental record cleared. You can start a new booking.");
+        });
+
     renderCustomerPage();
 }
 
