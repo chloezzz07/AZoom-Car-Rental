@@ -10,6 +10,10 @@
     <header>
         <h1>AZoom Car Rental</h1>
         <p>Welcome to AZoom Car Rental</p>
+        
+        <button type="button" id="open-login">
+            Login
+        </button>
     </header>
 
     <main>
@@ -17,28 +21,7 @@
             <h2>Select Your Portal</h2>
             <p>Please select the page you want to access.</p>
 
-            <div class="login-container">
-                <h3>Login</h3>
-
-                <form id="login-form">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" required>
-                    
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" required>
-                    
-                    <button type="submit">Login</button>
-                </form>
-                
-                <p id="login-message" class="status"></p>
-                
-                <p class="note">
-                    Customer: customer / customer123
-                </p>
-                <p class="note">
-                    Employee: employee / employee123
-                </p>
-            </div>
+            
 
             <div class="portal-container">
                 <div class="portal-card">
@@ -61,6 +44,29 @@
             </div>
         </section>
     </main>
+    
+    <div id="login-modal" class="login-modal" hidden>
+        <div class="login-box">
+            <button type="button" id="close-login" aria-label="Close login">
+                &times;
+            </button>
+
+            <h2>Login to AZoom</h2>
+
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+        <p id="login-message" class="status"></p>
+
+    </div>
+</div>
 
     <footer>
         <p>&copy; 2026 AZoom Car Rental. </p>
