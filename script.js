@@ -486,3 +486,36 @@ window.addEventListener("storage", function(event) {
         }
     }
 });
+
+
+// 7. Login system
+function setupLogin() {
+    const loginForm = document.getElementById("login-form");
+
+    if (!loginForm) {
+        return;
+    }
+
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const message = document.getElementById("login-message");
+
+        if (username === "customer" && password === "customer123") {
+            sessionStorage.setItem("azoomUserRole", "customer");
+            window.location.href = "customer.html";
+
+        } else if (username === "employee" && password === "employee123") {
+            sessionStorage.setItem("azoomUserRole", "employee");
+            window.location.href = "employee.html";
+
+        } else {
+            message.textContent = "Invalid username or password.";
+            message.style.color = "red";
+        }
+    });
+}
+
+setupLogin();
