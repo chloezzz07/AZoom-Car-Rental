@@ -17,6 +17,29 @@
             <h2>Select Your Portal</h2>
             <p>Please select the page you want to access.</p>
 
+            <div class="login-container">
+                <h3>Login</h3>
+
+                <form id="login-form">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+                
+                <p id="login-message" class="status"></p>
+                
+                <p class="note">
+                    Customer: customer / customer123
+                </p>
+                <p class="note">
+                    Employee: employee / employee123
+                </p>
+            </div>
+
             <div class="portal-container">
                 <div class="portal-card">
                     <h3>Customer Portal</h3>
@@ -42,5 +65,8 @@
     <footer>
         <p>&copy; 2026 AZoom Car Rental. </p>
     </footer>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>
