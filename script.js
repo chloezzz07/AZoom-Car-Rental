@@ -650,7 +650,7 @@ function setupLogout() {
         sessionStorage.removeItem("azoomUserRole");
         sessionStorage.removeItem("azoomUsername");
 
-        window.location.href = "index.html";
+        window.location.replace("index.html");
     });
 }
 
