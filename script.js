@@ -519,3 +519,36 @@ function setupLogin() {
 }
 
 setupLogin();
+
+// 8. Login Popup
+function setupLoginPopup() {
+    const modal = document.getElementById("login-modal");
+    const openButton = document.getElementById("open-login");
+    const closeButton = document.getElementById("close-login");
+
+    if (!modal || !openButton || !closeButton) {
+        return;
+    }
+
+    openButton.addEventListener("click", function() {
+        modal.hidden = false;
+    });
+
+    closeButton.addEventListener("click", function() {
+        modal.hidden = true;
+    });
+
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.hidden = true;
+        }
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            modal.hidden = true;
+        }
+    });
+}
+
+setupLoginPopup();
