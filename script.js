@@ -4,15 +4,12 @@
 const currentRole = sessionStorage.getItem("azoomUserRole");
 const currentPage = window.location.pathname;
 
-if (currentPage.endsWith("/customer.html") && currentRole !== "customer") {
-    alert("Please log in as a customer first.");
-    window.location.replace("index.html");
-}
-
+// Only Employee Page requires login
 if (currentPage.endsWith("/employee.html") && currentRole !== "employee") {
     alert("Please log in as an employee first.");
     window.location.replace("index.html");
 }
+
 
 // 1. Car information
 const cars = [
