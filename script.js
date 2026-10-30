@@ -552,3 +552,69 @@ function setupLoginPopup() {
 }
 
 setupLoginPopup();
+
+// 9. Customer Registration
+function setupRegistration() {
+    const registerForm = document.getElementById("register-form");
+    const loginForm = document.getElementById("login-form");
+    const registerButton = document.getElementById("show-register");
+    const registerMessage = document.getElementById("register-message");
+
+    if (!registerForm || !loginForm || !registerButton) {
+        return;
+    }
+
+    registerButton.addEventListener("click", function() {
+        registerForm.hidden = !registerForm.hidden;
+        loginForm.hidden = !registerForm.hidden;
+
+        registerButton.textContent = registerForm.hidden
+            ? "Register Now"
+            : "Back to Login";
+
+        registerMessage.textContent = "";
+    });
+
+    registerForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("register-username").value.trim();
+        const password = document.getElementById("register-password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        if (username.length < 3) {
+            registerMessage.textContent = "Username must have at least 3 characters.";
+            return;
+        }
+
+        if (username.toLowerCase() === "employee") {
+            registerMessage.textContent = "This username is reserved.";
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            registerMessage.textContent = "Passwords do not match.";
+            return;
+        }
+
+        // Demo account stored locally in this browser
+        const accounts = JSON.parse(
+            localStorage.getItem("azoomDemoAccounts") || "{}"
+        );
+
+        if (accounts[username]) {
+            registerMessage.textContent = "Username already exists.";
+            return;
+        }
+
+        accounts[username] = password;
+        localStorage.setItem("azoomDemoAccounts", JSON.stringify(accounts));
+
+        registerMessage.textContent = "Registration successful! Please log in.";
+        registerMessage.style.color = "green";
+
+        registerForm.reset();
+    });
+}
+
+setupRegistration();
