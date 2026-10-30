@@ -321,6 +321,28 @@ button:hover:not(:disabled) {
     margin: 0;
 }
 
+/* Logout button at top right */
+header {
+    position: relative;
+}
+
+#logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    margin: 0;
+    padding: 10px 18px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#logout-button:hover {
+    background-color: #c0392b;
+}
+
 #close-login:hover {
     background: #eef5fb;
 }
