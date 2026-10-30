@@ -655,3 +655,23 @@ function setupLogout() {
 }
 
 setupLogout();
+
+// 11. Page Access Control
+function checkPageAccess() {
+    const role = sessionStorage.getItem("azoomUserRole");
+    const page = window.location.pathname;
+
+    if (page.endsWith("/customer.html") && role !== "customer") {
+        alert("Please log in as a customer first.");
+        window.location.replace("index.html");
+        return;
+    }
+
+    if (page.endsWith("/employee.html") && role !== "employee") {
+        alert("Please log in as an employee first.");
+        window.location.replace("index.html");
+        return;
+    }
+}
+
+checkPageAccess();
