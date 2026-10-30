@@ -522,11 +522,6 @@ function setupLogin() {
             return;
         }
 
-        console.log("Login check:", {
-            username: username,
-            accountExists: Object.prototype.hasOwnProperty.call(accounts, username),
-            passwordMatches: accounts[username] === password
-        });
 
         if (
             Object.prototype.hasOwnProperty.call(accounts, username) &&
