@@ -281,3 +281,46 @@ button:hover:not(:disabled) {
         transition: none;
     }
 }
+
+/* Login modal */
+.login-modal[hidden] {
+    display: none;
+}
+
+.login-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.login-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+#close-login {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    color: #263238;
+    font-size: 26px;
+    padding: 4px 10px;
+    margin: 0;
+}
+
+#close-login:hover {
+    background: #eef5fb;
+}
