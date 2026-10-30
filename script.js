@@ -637,3 +637,21 @@ function setupRegistration() {
 }
 
 setupRegistration();
+
+// 10. Logout system
+function setupLogout() {
+    const logoutButton = document.getElementById("logout-button");
+
+    if (!logoutButton) {
+        return;
+    }
+
+    logoutButton.addEventListener("click", function() {
+        sessionStorage.removeItem("azoomUserRole");
+        sessionStorage.removeItem("azoomUsername");
+
+        window.location.href = "index.html";
+    });
+}
+
+setupLogout();
