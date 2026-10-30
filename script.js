@@ -503,14 +503,32 @@ function setupLogin() {
         const password = document.getElementById("password").value;
         const message = document.getElementById("login-message");
 
-        if (username === "customer" && password === "customer123") {
-            sessionStorage.setItem("azoomUserRole", "customer");
-            window.location.href = "customer.html";
-
-        } else if (username === "employee" && password === "employee123") {
+        // Employee login
+        if (username === "employee" && password === "employee123") {
             sessionStorage.setItem("azoomUserRole", "employee");
             window.location.href = "employee.html";
+            return;
+        }
 
+        // Registered customer login
+        let accounts = {};
+
+        try {
+            accounts = JSON.parse(
+                localStorage.getItem("azoomDemoAccounts") || "{}"
+            );
+        } catch (error) {
+            message.textContent = "Unable to read customer accounts.";
+            return;
+        }
+
+        if (
+            Object.prototype.hasOwnProperty.call(accounts, username) &&
+            accounts[username] === password
+        ) {
+            sessionStorage.setItem("azoomUserRole", "customer");
+            sessionStorage.setItem("azoomUsername", username);
+            window.location.href = "customer.html";
         } else {
             message.textContent = "Invalid username or password.";
             message.style.color = "red";
