@@ -63,6 +63,29 @@
                 <button type="submit">Login</button>
             </form>
 
+            <p>Don't have an account?</p>
+            
+            <button type="button" id="show-register">
+                Register Now
+            </button>
+
+            <form id="register-form" hidden>
+                <h3>Create Customer Account</h3>
+                
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" required>
+
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" required minlength="6">
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required minlength="6">
+
+                <button type="submit">Create Account</button>
+            </form>
+            
+            <p id="register-message" class="status"></p>
+            
         <p id="login-message" class="status"></p>
 
     </div>
